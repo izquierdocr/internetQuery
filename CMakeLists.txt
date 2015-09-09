@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.8)
+project(internetquery)
+#find_package( OpenCV REQUIRED )
+find_package( CURL  )
+#SET (PLAYERCPP_INCLUDE_DIRS /usr/include;/usr/include)
+#LIST (APPEND PLAYERCPP_INCLUDE_DIRS "/usr/include/player-3.0")
+#SET (PLAYERCPP_LINK_LIBS boost_thread;boost_signals;m)
+#LIST (APPEND PLAYERCPP_LINK_LIBS "playerc++")
+
+#include_directories( ${OpenCV_INCLUDE_DIRS} )
+include_directories( ${CURL_INCLUDE_DIRS} )
+#include_directories( ${PLAYERCPP_INCLUDE_DIRS} )
+add_executable(internetquery main.cpp)
+#target_link_libraries( internetquery ${OpenCV_LIBS} )
+target_link_libraries( internetquery ${CURL_LIBRARIES} )
+#target_link_libraries( internetquery ${PLAYERCPP_LINK_LIBS} )
+
